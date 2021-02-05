@@ -1,0 +1,5 @@
+C:\Users\deomca\Desktop\DEFCCDigitalLibraryFinal\DEFCCClass\bin\Debug\DEFCCClass.dll
+C:\Users\deomca\Desktop\DEFCCDigitalLibraryFinal\DEFCCClass\bin\Debug\DEFCCClass.pdb
+C:\Users\deomca\Desktop\DEFCCDigitalLibraryFinal\DEFCCClass\obj\Debug\DEFCCClass.dll
+C:\Users\deomca\Desktop\DEFCCDigitalLibraryFinal\DEFCCClass\obj\Debug\DEFCCClass.pdb
+C:\Users\deomca\Desktop\DEFCCDigitalLibraryFinal\DEFCCClass\bin\Debug\DEFCCClass.dll.config

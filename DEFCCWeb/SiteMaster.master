@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMaster.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEFCC Digital Library</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <header id="-top-header">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-green">
+      <a class="navbar-brand  text-white" href="#">DEFCC Digital Library</a>
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
+      <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="index.aspx"><i class="fas fa-home"></i> Home </a>
+        </li>
+      <li class="nav-item">
+           <a id="folderview" runat="server" class="nav-link" href="BrowsByFolder.aspx"><i class="fas fa-file-alt"></i> Folder View</a>
+        </li>
+      <li class="nav-item">
+           <a  id="categoryview" runat="server" class="nav-link" href="BrowsByCategory.aspx"><i class="fas fa-file-alt"></i> Category View</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" id="upload" runat="server" href="upload.aspx"><i class="fas fa-upload"></i> Upload</a>
+        </li>
+        <li class="nav-item">
+        <% if (Convert.ToString(Session["UserName"]) != "")
+           { %>
+        <span class="nav-link"> Welcome <%= Session["UserName"] %> ! </span>         
+
+       <%  }
+           else
+           { %>
+          <a class="nav-link" id="login" href="login.aspx"><i class="fas fa-sign-in-alt"></i> Login</a>
+
+        <%  } %>
+        </li>      
+        <li class="nav-item">
+      
+         <asp:LinkButton ID="lnkLogout" class="nav-link"  Visible="false" runat="server" Text="Logout" OnClick="logout_click"></asp:LinkButton>
+        
+        </li>
+      </ul>
+      
+    </div>
+    </nav>
+
+    <!-- ./ End Navbar -->
+   
+    <!-- ./ End Banner and serach section -->
+  </header>
+    <!-- End Header --> 
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <!-- footer -->
+    <footer  id="footer">
+    <div class="container ">
+      <div class="col">
+        <p class="text-center mb-0">
+          <i class="fa fa-copyright" aria-hidden="true"></i> 2021 <span class="text-green">DEFCC Digital Library</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+    <!-- End footer -->
+    <script src="js/jquery-3.3.2.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    </form>
+</body>
+</html>
